@@ -1,5 +1,4 @@
-Copyright (c) 2015 Takashi Kawasaki @espresso3389
-Copyright (c) 2014 Karan Goel
+Copyright (c) 2015 Takashi Kawasaki
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
