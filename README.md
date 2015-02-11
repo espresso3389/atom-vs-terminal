@@ -1,10 +1,6 @@
 # visualstudio-terminals
 
-Open Visual Studio command prompt on current file's directory with `ctrl-shift-t`.
-
-Open a Visual Studio command prompt in the project's root directory with `alt-shift-t`.
-
-Keybindings: `ctrl-shift-t`, `alt-shift-t`
+Open Visual Studio command prompt on current file's directory with context menu entries.
 
 Install: `apm install visualstudio-terminals`
 
