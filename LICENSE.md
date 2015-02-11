@@ -1,3 +1,4 @@
+Copyright (c) 2015 Takashi Kawasaki @espresso3389
 Copyright (c) 2014 Karan Goel
 
 Permission is hereby granted, free of charge, to any person obtaining

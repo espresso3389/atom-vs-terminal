@@ -1,13 +1,9 @@
 {
-  "name": "atom-terminal",
-  "main": "./lib/atom-terminal",
+  "name": "vs-terminal",
+  "main": "./lib/vs-terminal",
   "version": "0.6.0",
-  "description": "Open terminal in the current file's directory.",
-  "activationEvents": [
-    "atom-terminal:open",
-    "atom-terminal:open-project-root"
-  ],
-  "repository": "https://github.com/karan/atom-terminal",
+  "description": "Open Visual Studio command prompt in the current file's directory.",
+  "repository": "https://github.com/espresso3389/atom-vs-terminal",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
