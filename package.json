@@ -1,7 +1,7 @@
 {
   "name": "visualstudio-terminals",
   "main": "./lib/visualstudio-terminals",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Open Visual Studio command prompt in the current file's directory.",
   "repository": "https://github.com/espresso3389/visualstudio-terminals",
   "license": "MIT",
