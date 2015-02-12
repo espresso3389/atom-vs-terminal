@@ -7,15 +7,22 @@ fs = require('fs')
 if platform() != 'win32'
     return
 
-openvscmd = (bat,arg,title) ->
+openOnFolder = (folder,bat,arg,title) ->
+    cmd = env['ComSpec']
+    cmdline = "\"#{cmd}\" /K \"#{bat}\" #{arg}"
+    console.log(cmdline)
+    exec "start \"#{title}\" " + cmdline, cwd: folder if folder?
+
+openForFile = (file,bat,arg,title) ->
+    dirpath = path.dirname(file)
+    cmd = env['ComSpec']
+    cmdline = "\"#{cmd}\" /K \"#{bat}\" #{arg}"
+    console.log("#{cmdline} on #{dirpath}")
+    exec "start \"#{title}\" " + cmdline, cwd: dirpath if dirpath?
+
+openForActivePane = (bat,arg,title) ->
     editor = atom.workspace.getActivePaneItem()
-    filepath = editor?.buffer?.file?.path
-    if filepath
-        dirpath = path.dirname(filepath)
-        cmd = env['ComSpec']
-        cmdline = "\"#{cmd}\" /K \"#{bat}\" #{arg}"
-        console.log(cmdline)
-        exec "start \"#{title}\" " + cmdline, cwd: dirpath if dirpath?
+    openForFile(editor?.buffer?.file?.path,bat,arg,title)
 
 module.exports =
     activate: ->
@@ -33,7 +40,7 @@ module.exports =
                     cmd = "visual-studio-terminals:#{vsname}-#{arch}";
                     label = vsname + " (#{arch})"
                     menues.push { label: label, command: cmd }
-                    atom.commands.add "atom-workspace", cmd, => openvscmd(vcvarsall, arch, label)
+                    atom.commands.add "atom-workspace", cmd, => openForActivePane(vcvarsall, arch, label)
         atom.contextMenu.add {
             'atom-workspace': [{
                 label: 'Visual Studio Terminals',
