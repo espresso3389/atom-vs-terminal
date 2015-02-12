@@ -4,6 +4,9 @@ Open Visual Studio command prompt on current file's directory with context menu 
 
 Install: `apm install visualstudio-terminals`
 
+
+![visualstudio-terminals](https://raw.github.com/espresso3389/visualstudio-terminals/master/sample.gif)
+
 # The original project
 
 The code is based on the following project:
