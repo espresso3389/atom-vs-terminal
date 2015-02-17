@@ -37,10 +37,11 @@ module.exports =
             vcvarsall = vstooldir + '..\\..\\VC\\vcvarsall.bat'
             if fs.existsSync(vcvarsall)
                 for arch in ['x86', 'amd64']
-                    cmd = "visual-studio-terminals:#{vsname}-#{arch}";
+                    cmd = "visual-studio-terminals:#{vsname}-#{arch}"
                     label = vsname + " (#{arch})"
                     menues.push { label: label, command: cmd }
-                    atom.commands.add "atom-workspace", cmd, => openForActivePane(vcvarsall, arch, label)
+                    do (vcvarsall, arch, label) ->
+                        atom.commands.add "atom-workspace", cmd, => openForActivePane(vcvarsall, arch, label)
         atom.contextMenu.add {
             'atom-workspace': [{
                 label: 'Visual Studio Terminals',
